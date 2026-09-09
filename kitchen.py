@@ -20,6 +20,9 @@ class Sum:
         self.left = left
         self.right = right
 
+    def reduce(self, unit):
+        return Quantity(self.left.amount + self.right.amount, unit)
+
 class Converter:
     def reduce(self, expression, unit):
-        return expression
+        return expression.reduce(unit)
